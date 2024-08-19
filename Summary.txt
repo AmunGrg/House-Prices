@@ -1,0 +1,40 @@
+For this project, I analysed a dataset of house prices in Perth with over 33,000 entries.
+Before coding, I removed unwanted columns from the csv file directly.
+Upon reading the csv file, I checked for any missing data in any columns.
+
+
+First, I plotted a box plot to visualize the prices of houses.
+The box represents the central 50% of the price data, which seems to be between approximately 450,000 and 700,000 AUD.
+The median price is slightly above 500,000 AUD.
+The lower whisker shows that the minimum price is around 50,000 AUD while the upper whisker extends to around 1,250,000 AUD indicating that most of the house price falls within this range.
+Above this are the numerous outliers with some prices reaching close to 2,500,000 AUD.
+These could indicate some prices are significantly more expensive from the typical household.
+
+
+Next, I created a histogram with the prices.
+According to the data, it is clear most houses cost around 500,000 AUD.
+Then plotted a scatter plot of bedrooms against price. Most houses had 2-6 bedroom, and only a few with 9 or 10.
+
+
+Filtered the columns into numerical and categorial data. 
+Since the address isn't numerical, it had to be converted using one hot encoding.
+New functions of binary values would be created and the replaced the original column it in the data frame.
+
+
+Created a correlation matrix to identify correlation between numerical columns price and bedrooms.
+Displayed the matrix with a heatmap.
+It shows the correlation between price and number of bedrooms is 0.25. 
+As I skimmed the csv file, the more expensive houses did not necessarily have the most bedrooms.
+This could be because the they spent the money on building other facilities in the house rather than bedrooms.
+To further investigate this, I applied a simple linear regression model.
+The regression line does confirm an increase in price with the number of bedrooms.
+
+
+Confidence interval for the mean house price using 95% confidence level parameter.
+Based on the data in the dataset, the true average price falls between £633,270.38 and £640,873.63.
+
+
+For standardization, made another copy of the data frame and selected the numerical columns.
+Used the standard scaler function to standardize the numerical columns, which ensures features are on a similar scale by removing the mean and scaling to unit variance. The scaled data replaces the data in the data frame. 
+Then plotted a boxplot of the bedrooms. The graph displayed most houses had a similar number of bedrooms, clustering around the average. A few houses had a significantly higher number of bedrooms. The range of the standardized data appears to be approximately from -2 to 8, suggesting that the number of bedrooms in the dataset varies considerably.
+
